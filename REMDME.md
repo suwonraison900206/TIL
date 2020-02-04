@@ -47,12 +47,46 @@ $ git config --global user.name "john"
 
 
 - git config --global user.name suwonraison900206
+
 - git config --global user.email suwonraison@gmail.com
-- **git status 현재 디렉토리 git 상태를 확인할때 ** 중요합니당!
-- git commit -m "firstcommit"
-- git log 이력을 볼때
-- git add .  << 현재파일및 모든 디렉토리선택
+
+- **`git status` 현재 디렉토리 git 상태를 확인할때 ** 중요합니당!
+
+- `git commit -m "firstcommit"`
+
+- `git log` commit 한 후 확인 할때, 이력을 볼때
+
+- `git add .`  << 현재파일및 모든 디렉토리선택
+
 - git init는 관리할 폴더에 최상위에 딱 한번만 사용한다.
+
+- 파일 변경시 git add.  >> git commit -m "commit message"
+
+- add, commit push는 추가 변경 있을때 계속
+
+- 반드시 commit 이후에 매번 push 할 필요없다 commit은 
+
+- `git push -u origin master` 이후에 push 명령어는 그냥 `git push` 라고만 해도 된다.
+
+- 단 `git push origin master` 이렇게하면 계속 같은 명령어를 사용해야 한다.
+
+- `git pull`
+
+  ### 집에서 할때
+
+- `git clone 가져올 자료 주소 ` 가져오면 마스터 상태 init 되어있다.
+
+- 내용 수정하고 `git add .` 후 푸시
+
+- 그 이후엔 `pull` 해서 이전 버전 가져온 후 진행
+
+- "Talk is cheap, show me your code"
+
+## jupyter
+
+
+
+
 
 
 
