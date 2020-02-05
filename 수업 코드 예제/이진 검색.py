@@ -14,11 +14,3 @@
 # a = [2, 4, 7, 9, 11, 19, 23]
 #
 # print(binarysearch(a, 23))
-
-
-T = int(input())
-
-
-for test_case in range(T):
-
-
