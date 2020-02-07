@@ -6,7 +6,7 @@ for i in range(10):
     c = int(input())
     test_in = []
     for i in range(100):
-        temp = list(map(int, input().split()))
+       + temp = list(map(int, input().split()))
         test_in.append(temp)
     reverse_test_in = test_in[::-1]
     cnt = 0
