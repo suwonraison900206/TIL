@@ -17,6 +17,7 @@ t = int(input())
 print(lst)
 for test_case in range(t):
     b = list(map(int, input().split()))
+
     X = 1
     Y = 1
     count = 0
