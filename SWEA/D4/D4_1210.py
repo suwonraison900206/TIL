@@ -3,17 +3,17 @@
 import sys
 sys.stdin = open("1210.txt")
 
-
-def my_min(list_a):
-    result = list_a[0]
-    result_idx = 0
-    for a in range(1, len(list_a)):
-        if list_a[a] != 0 and list_a[a] <= result:
-            result = list_a[a]
-            result_idx = a
-
-    return result_idx
-
+#
+# def my_min(list_a):
+#     result = list_a[0]
+#     result_idx = 0
+#     for a in range(1, len(list_a)):
+#         if list_a[a] != 0 and list_a[a] <= result:
+#             result = list_a[a]
+#             result_idx = a
+#
+#     return result_idx
+#
 
 for test_case in range(10):
     a = int(input())
@@ -22,14 +22,18 @@ for test_case in range(10):
         test_in.append(list(map(int, input().split())))
 
 
+
     result2 = []
     for i in range(100):
+
         R = 0
         L = 0
         Y = 0
+        k = []
+        k.append(i)
         if test_in[0][i] == 1:
             result = 0
-            while Y < 99:
+            while test_in[Y][i] == 2:
                 if i - 1 >= 0 and i + 1 <= 99:  # 가운데 값 처리
                     if test_in[Y][i-1] == 0 and test_in[Y][i+1] == 0:
                         Y = Y + 1
@@ -49,6 +53,7 @@ for test_case in range(10):
                         elif R == 1:
                             R = 0
                             Y = Y + 1
+
                         elif L == 0 and R == 0:
                             L = 1
                             i = i -1
@@ -91,12 +96,9 @@ for test_case in range(10):
                         else:
                             L = 1
                             i = i - 1
-            if test_in[99][i] == 2:
-                print('#{} {}'.format(test_case + 1, i ))
 
 
 
 
-
-
+    # print('#{} {}'.format(test_case + 1, my_min(result2)))
 

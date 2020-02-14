@@ -102,3 +102,4 @@ for test_case in range(10):
 
 
     print('#{} {}'.format(test_case + 1, my_min(result2)))
+
