@@ -10,6 +10,9 @@ for test_case in range(t):
     dy = [0, 0, -1, 1]
     cnt = 0
     entry_x, entry_y = 0, 0
+
+
+
     for i in range(16):
         for j in range(16):
             if list_k[i][j] == 2:
@@ -18,6 +21,8 @@ for test_case in range(t):
     stack.append((entry_x, entry_y))
     while stack:
         v = stack.pop()
+        print(v[0])
+        print(v[1])
         if list_k[v[0]][v[1]] == 3:
             cnt = cnt + 1
             break
@@ -30,4 +35,4 @@ for test_case in range(t):
                     visit[di][dj] = 1
                     stack.append((di, dj))
 
-    print('#{} {}'.format(test_case+1,cnt))
+    print('#{} {}'.format(test_case+1, cnt))

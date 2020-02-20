@@ -5,8 +5,10 @@ sys.stdin = open("4871.txt")
 t = int(input())
 
 for test_case in range(t):
-    temp = list(map(int,input().split()))
-    list_k = [list(map(int,input().split())) for _ in range(temp[1])]
+    temp = list(map(int, input().split()))
+    list_k = [list(map(int, input().split())) for _ in range(temp[1])]
+
+
     result_list = list(map(int,input().split()))
     node_list = [[0] * (temp[0] + 1) for _ in range(temp[0] + 1)]
 
