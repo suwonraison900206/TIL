@@ -1,8 +1,5 @@
-a = [29 , 21 ,26, 9, 5 ,8]
-
-
-a.sort()
+a = -1.6
 
 print(a)
 
-
+print(int(a))

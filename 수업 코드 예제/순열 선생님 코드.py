@@ -21,23 +21,3 @@ S = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 backtrack(a, 0, 10, 0)
 
 
-
-
-
-#
-# a =[0] * 4
-# def backtrack(a, k, input):
-#     #print(a,k)
-#     if k == input:
-#         print(a)
-#     else:
-#         k += 1
-#         a[k] = 1
-#         backtrack(a, k, input)
-#         a[k] = 0
-#         backtrack(a, k, input)
-# backtrack(a, 0, 3)
-
-
-
-
