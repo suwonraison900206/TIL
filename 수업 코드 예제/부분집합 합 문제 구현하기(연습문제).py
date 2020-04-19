@@ -25,21 +25,20 @@
 #     #
 #
 
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+arr = [-3, 3, -9, 6, 7, -6, 1, 5, 4, -2]
 
 sum = 0
 cnt = 0
 
 for i in range(1, 1<<len(arr)):
-
+    sum = 0
     for j in range(len(arr)):
         if i & (1<< j ):
             sum = sum + arr[j]
-
     if sum == 0:
         cnt += 1
         print("%d : " % cnt, end='')
         for j in range(len(arr)):
             if i & (1 << j):
-                print((arr[j]), end='')
+                print(arr[j]), end='')
         print()

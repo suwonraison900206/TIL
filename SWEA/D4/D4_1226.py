@@ -21,8 +21,6 @@ for test_case in range(t):
     stack.append((entry_x, entry_y))
     while stack:
         v = stack.pop()
-        print(v[0])
-        print(v[1])
         if list_k[v[0]][v[1]] == 3:
             cnt = cnt + 1
             break

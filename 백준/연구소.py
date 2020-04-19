@@ -1,87 +1,105 @@
-
 import sys
-sys.stdin = open("reserch.txt")
+sys.stdin = open("research.txt")
 
-
-
-
-K , N = list(map(int, input().split()))
-temp =[]
-
+K, N, M = list(map(int, input().split()))
+result = []
+sample_list =[]
 for i in range(K):
-    temp_k = list(map(int, input().split()))
-    temp.append(temp_k)
+    result.append(list(map(int, input().split())))
+    for j in range(len(result)):
+        sample_list.append(result[j])
+    result = []
 
-print(temp)
-
-test_list = []
+k = []
+final = []
 
 for i in range(K):
     for j in range(N):
-        if temp[i][j] == 0:
-            test_list.append((i*N) + j)
+        k.append([sample_list[i][j]] + [0]) # 삼중배열 모든 값에 [0] 붙여주기
+    final.append(k)
+    k = []
 
-n = test_list
-final_list = []
-for i in range(len(n)):
-    for j in range(i+1, len(n)):
-        for k in range(j+1, len(n)):
-            sample_list = []
-            if n[i] != n[j] and n[i] != n[k] and n[j] != n[k]:
-                sample_list.append(n[i])
-                sample_list.append(n[j])
-                sample_list.append(n[k])
-                final_list.append(sample_list)
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
 
-entry_x, entry_y = 0, 0
+air_con = []
+for i in range(K):
+    for j in range(N):
+        if final[i][j][0] == -1:
+            air_con.append(i)
+            air_con.append(j)
 
-# print(final_list)
+for q in range(M):
+    for i in range(K):
+        for j in range(N):
+            if final[i][j][0] != 0 and final[i][j][0] != -1:
+                div = (final[i][j][0] // 5)
+                for d in range(4):
+                    di = i + dx[d]
+                    dj = j + dy[d]
+                    h = 0
+
+                    while 0 <= di <= K-1 and 0 <= dj <= N-1 and final[di][dj][0] != -1 and h < 1:
+                        final[di][dj][1] = final[di][dj][1] + div
+                        final[i][j][0] = final[i][j][0] - div
+                        h = h + 1
+
+
+    # 나눠져 있는 값 합쳐줌
+    for i in range(K):
+        for j in range(N):
+            final[i][j][0] = final[i][j][0] + final[i][j][1]
+            final[i][j][1] = 0
+
+
+
+
+
+
+    for i in range(air_con[0]-1,-1,-1):
+        if final[i+1][0][0] == -1:
+            final[i][0][0] = 0
+        else:
+            final[i+1][0][0] = final[i][0][0]
+            final[i][0][0] = 0
+
+    for i in range(1,N):
+        final[0][i-1][0] = final[0][i][0]
+        final[0][i][0] = 0
+
+    for i in range(1, air_con[0]+1):
+        final[i-1][N-1][0] = final[i][N-1][0]
+        final[i][N-1][0] = 0
+
+    for i in range(N-2,0,-1):
+        final[air_con[0]][i+1][0] = final[air_con[0]][i][0]
+        final[air_con[0]][i][0] = 0
+
+    for i in range(air_con[2]+1, K):
+        if final[i-1][0][0] == -1:
+            final[i][0][0] = 0
+        else:
+            final[i-1][0][0] = final[i][0][0]
+            final[i][0][0] = 0
+
+    for i in range(1, N):
+        final[K-1][i-1][0] = final[K-1][i][0]
+        final[K-1][i][0] = 0
+
+    for i in range(K-2, air_con[2]-1, -1):
+        final[i+1][N-1][0] = final[i][N-1][0]
+        final[i][N-1][0] = 0
+
+    for i in range(N-2, 0, -1):
+        final[air_con[2]][i+1][0] = final[air_con[2]][i][0]
+        final[air_con[2]][i][0] = 0
+
+cnt = 0
+for i in range(K):
+    for j in range(N):
+        if final[i][j][0] != -1:
+            cnt = cnt + final[i][j][0]
+
+print(cnt)
 #
-# print(len(final_list))
-#
-
-
-for i in range(len(final_list)):
-    if final_list[i][0] == 0:
-        temp[0][0] = 1
-        if temp[final_list[i][1] // 6][final_list[i][1] % 6] == 1 and temp[final_list[i][2] // 6][final_list[i][2] % 6] == 1:
-            for x in range(K):
-                for y in range(N):
-
-
-
-
-
-#
-#
-# n = len(test_list)
-# final_list = []
-#
-#
-#
-
-
-# for i in range(1, 1<<n):
-#     result = []
-#     for j in range(n+1):
-#         if i & (1<<j):
-#             result.append(arr[j])
-#             if len(result) == 3:
-#                 print(result)
-#     print()
-# print()
-#
-
-
-
-
-
-# for i in range(len(test_list)):
-#     for j in range(len(test_list)):
-#         for k in range(len(test_list)):
-#             if test_list[i] != test_list[j] and test_list[i] != test_list[k] and test_list[j] != test_list[k]:
-#                 final_test.append([test_list[i], test_list[j], test_list[k]])
-#                 print(final_test)

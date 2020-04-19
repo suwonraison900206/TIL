@@ -1,5 +1,5 @@
-# import sys
-# sys.stdin = open("1974.txt")
+import sys
+sys.stdin = open("1974.txt")
 
 t = int(input())
 

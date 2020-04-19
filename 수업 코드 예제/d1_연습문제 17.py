@@ -1,9 +1,7 @@
-a = list(map(int,input().split(',')))
 
-print(a)
 
-b = []
 
-for i in range(len(a)):
-    b.append((a[i] * 3.14 * 2))
+a = 43
+div = a // 5
 
+print(a - div)

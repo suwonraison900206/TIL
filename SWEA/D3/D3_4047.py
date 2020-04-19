@@ -39,6 +39,10 @@ for test_case in range(T):
                 cnt = cnt + 1
             else:
                 hart_2.append(s[i])
+    print(space_2)
+    print(dia_2)
+    print(clover_2)
+    print(hart_2)
     if cnt != 0:
         print('#{} ERROR'.format(test_case + 1))
     else:

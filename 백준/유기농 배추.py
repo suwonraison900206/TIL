@@ -19,7 +19,7 @@ for test_case in range(t):
 
     for i in range(temp[1]+2):
         for j in range(temp[0]+2):
-            if list_k[i][j] == 1 and visit[i][j] == 0:
+            if list_k[i][j] == 1 and visit[i][j] == 0: 
                 cnt = cnt + 1
                 entry_x = i
                 entry_y = j
