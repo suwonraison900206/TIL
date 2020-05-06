@@ -1,0 +1,19 @@
+결과 : xx1110x1x100011xxx11000111x1x00111010
+def example( 리스트 , x 갯수 )
+	for i in range(전체)
+		for j in range(전체)
+			if 리스트에 [i][j]값이 흑(0) or 백(1) 이라면:
+				do result라는 변수에 값 저장
+				if 변수 값이 변한다면 
+					do example( 전체 * (1/4) 범위, X 값 + 1)
+				else:
+					do lst 변수에 저장(흑(0) or 백(1)
+					do 출력( lst 변수 , x갯수 , end=' ')
+	
+
+
+	
+result = []
+
+
+example(문제 리스트, 0) # 문제에 리스트를 함수에 넣었습니다. 

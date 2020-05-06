@@ -8,7 +8,6 @@ for i in range(K):
     apple = list(map(int,input().split()))
     lst[apple[0] - 1][apple[1] - 1] = 1
 
-
 L = int(input())
 
 dir_cnt = []
@@ -25,13 +24,11 @@ dir = 0
 time = 0
 snake = []
 snake.append([0,0])
-
 while snake:
     di = snake[-1][0] + dx[dir]
     dj = snake[-1][1] + dy[dir]
     time = time + 1
     if di < 0 or di > N-1 or dj < 0 or dj > N-1:
-        print(time)
         break
     else:
         if lst[di][dj] == 0:
