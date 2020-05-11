@@ -6,7 +6,6 @@ T = int(input())
 
 for test_case in range(1,T+1):
     N = int(input())
-
     lst = [list(map(int,input().split())) for __ in range(N)]
     lst_2 = []
     for i in range(1, N):
@@ -14,7 +13,6 @@ for test_case in range(1,T+1):
     k = list(permutations(lst_2, N - 1))
     count = []
     for i in range(len(k)):
-
         result_lst = []
 
         result_lst.append(0)

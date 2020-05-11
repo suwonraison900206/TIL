@@ -64,7 +64,6 @@ def push(map_lst, r, b, dir,locate, count):
         push(map_lst, r, b, direction[1], 1, count + 1)
         push(map_lst, r, b, direction[2], 2, count + 1)
 
-
 N, M = map(int,input().split())
 lst = [list(input()) for __ in range(N)]
 RED = (0, 0)

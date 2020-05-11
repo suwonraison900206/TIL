@@ -17,6 +17,8 @@ for i in range(N):
 
 zero_lst2 = list(combinations(zero_lst,3))
 
+print(zero_lst2)
+
 for i in range(len(zero_lst2)):
     lst2 = copy.deepcopy(lst)
     virus_lst = []
