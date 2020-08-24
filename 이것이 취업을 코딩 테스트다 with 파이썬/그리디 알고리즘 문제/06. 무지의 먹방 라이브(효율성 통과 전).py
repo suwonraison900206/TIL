@@ -6,8 +6,6 @@ def solution(food_times, k):
         return answer
 
 
-
-
     min_value = min(food_times)
 
     if (min_value * len(food_times)) < k:
