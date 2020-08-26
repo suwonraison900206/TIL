@@ -1,9 +1,6 @@
 import sys
 sys.stdin = open("01.모험가 길드.txt")
-
-
 N = int(input())
-
 hero = list(map(int,input().split()))
 hero.sort()
 
@@ -22,4 +19,4 @@ for i in range(len(hero)):
             cnt = cnt + 1
             pass
         pass
-print (cnt)
+print(cnt)

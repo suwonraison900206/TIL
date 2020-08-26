@@ -10,12 +10,10 @@ for i in range(len(S)-1):
         if i == 0:
             result = S[i] + S[i+1]
         else:
-
             result = result + S[i+1]
     else:
         if i == 0:
             result = S[i] * S[i+1]
         else:
             result = result * (S[i+1])
-
 print(result)
