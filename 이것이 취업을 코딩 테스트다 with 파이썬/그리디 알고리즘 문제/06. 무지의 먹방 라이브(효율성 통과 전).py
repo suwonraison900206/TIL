@@ -24,7 +24,7 @@ def solution(food_times, k):
 
 
 food_times = [460, 560, 40, 600]
-k = 1340
+k = 1340olA
 
 
 print(solution(food_times, k))
