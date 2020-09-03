@@ -3,65 +3,53 @@ sys.stdin = open("11. 뱀.txt")
 
 N = int(input())
 K = int(input())
-apple_list = [list(map(int,input().split())) for __ in range(K)]
+apple_lst = [list(map(int,input().split())) for __ in range(K)]
 L = int(input())
-snake_direction_list= [list(input().split()) for __ in range(L)]
+dir_lst = [list(input().split()) for __ in range(L)]
+wall = [[2] * (N+2)]
+board = wall + [([2] + ([0] * N) + [2]) for __ in range(N)] + wall
+for i in range(len(apple_lst)):
+    board[apple_lst[i][0] ][apple_lst[i][1] ] = 1
+time = 0
 
-map_list = [[0] * N for __ in range(N)]
-
-for i in range(len(apple_list)):
-    map_list[apple_list[i][0] -1][apple_list[i][1] -1] = 1
-
-snake = (0,0)
-stack = []
-
-dir = [(0,1), (1,0), (0,-1), (-1,0)]
+dx = [0, 1, 0, -1]
+dy = [1, 0, -1, 0]
 dir_num = 0
-count = 0
-stack.append(snake)
+snake = [[1,1]]
 
 while True:
-    k = stack.pop(-1)
-    print(k)
-    if len(snake_direction_list) != 0:
-        if count == int(snake_direction_list[0][0]):
-            if snake_direction_list[0][1] == 'D':
+    k = snake[-1]
+    tail = snake.pop(0)
+
+    if len(dir_lst) != 0 and time == int(dir_lst[0][0]):
+        if dir_lst[0][1] == 'D':
+            if dir_num != 3:
                 dir_num = dir_num + 1
-                snake_direction_list.pop(0)
-                if dir_num == 4:
-                    dir_num = 0
-            elif snake_direction_list[0][1] == 'L':
+            elif dir_num == 3:
+                dir_num = 0
+            dir_lst.pop(0)
+        elif dir_lst[0][1] == 'L':
+            if dir_num != 0:
                 dir_num = dir_num - 1
-                snake_direction_list.pop(0)
-                if dir_num == -1:
-                    dir_num = 3
+            elif dir_num == 0:
+                dir_num = 3
+            dir_lst.pop(0)
 
+    di = k[0] + dx[dir_num]
+    dj = k[1] + dy[dir_num]
 
-
-    if (k[0] + dir[dir_num][0],k[1] + dir[dir_num][1]) in k:
-        print(count)
+    if [di, dj] in snake or [di,dj] == tail:
+        break
+    elif board[di][dj] == 0:
+        snake.append([di, dj])
+    elif board[di][dj] == 1:
+        snake.insert(0, tail)
+        snake.append([di, dj])
+        board[di][dj] = 0
+    elif board[di][dj] == 2:
         break
 
-
-    if 0 <= k[0] + dir[dir_num][0] <= N-1 and 0 <= k[1] + dir[dir_num][1] <= N-1:
-
-        if map_list[k[0] + dir[dir_num][0]][k[1] + dir[dir_num][1]] == 0:
-            if len(stack) ==0:
-                stack.append((k[0] + dir[dir_num][0], k[1] + dir[dir_num][1]))
-            else:
-                stack.pop(0)
-                stack.append((k[0] + dir[dir_num][0], k[1] + dir[dir_num][1]))
-
-        elif map_list[k[0] + dir[dir_num][0]][k[1] + dir[dir_num][1]] == 1:
-            stack.append((k[0], k[1]))
-            stack.append((k[0] + dir[dir_num][0], k[1] + dir[dir_num][1]))
-
-        count = count + 1
-    else:
-        print(count +1)
-        break
+    time = time + 1
 
 
-
-
-
+print(time + 1)

@@ -19,10 +19,9 @@ except:
     pass
 for i in range(5, n+1):
     try:
-        print(wine)
         print(d)
-        print(d[i-4] + wine[i-2] +wine[i-1],  d[i-3]+wine[i-1])
-        d[i] = max(d[i-4] + wine[i-2] +wine[i-1], d[i-3]+wine[i-1])
+        print(wine)
+        d[i] = max(d[i-4] + wine[i-2] +wine[i-1], d[i-3]+wine[i-1],)
     except:
         d[i] = 0
 print(d)
