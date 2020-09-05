@@ -11,8 +11,6 @@ def solution(n):
                 d[k] = 0
 
 
-
-
     answer = sum(d)
     print(answer)
     return answer
