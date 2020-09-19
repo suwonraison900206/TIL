@@ -27,8 +27,10 @@ for i in range(len(k)):
                 cnt = -(-(cnt) // number_lst[q+1])
             else:
                 cnt = cnt // number_lst[q + 1]
-    if -1000000000 <= cnt < 100000000:
+    if -1000000000 <= cnt < 1000000000:
         stack.append(cnt)
+
+
 print(max(stack))
 print(min(stack))
 
