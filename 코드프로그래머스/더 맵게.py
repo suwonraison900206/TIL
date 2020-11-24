@@ -11,6 +11,7 @@ def solution(scoville, K):
         heapq.heappush(scoville, a + (b*2))
         c = heapq.heappop(scoville)
 
+
         if c >= K:
 
             answer = count
