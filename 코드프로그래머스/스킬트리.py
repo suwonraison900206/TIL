@@ -3,7 +3,7 @@ def solution(skill, skill_trees):
     skill = list(skill)
 
 
-
+    
     for skill_tree in skill_trees:
         skill2 = skill[:]
         flag = 0

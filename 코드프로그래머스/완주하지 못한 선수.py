@@ -1,6 +1,5 @@
 def solution(participant, completion):
 
-
     compare_a = {}
     compare_b = {}
 
@@ -10,20 +9,20 @@ def solution(participant, completion):
         else:
             compare_a[i] = 1
 
-
-
     for i in completion:
         if i in compare_b:
             compare_b[i] += 1
         else:
             compare_b[i] = 1
 
-
+    print(compare_a)
+    print(compare_b)
 
     for i in compare_b:
         if i in compare_a:
             compare_a[i] -= compare_b[i]
 
+    print(compare_a)
     for i in compare_a:
 
         if compare_a[i] == 1:

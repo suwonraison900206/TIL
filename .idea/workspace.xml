@@ -8,11 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5731bfce-6d1d-4bc2-88a5-97030409ad64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/파이썬 알고리즘 인터뷰/20장 슬라이딩 윈도우/P575 부분 문자열이 포함된 최소윈도우.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/코드프로그래머스/보석쇼핑.py" beforeDir="false" afterPath="$PROJECT_DIR$/코드프로그래머스/보석쇼핑.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py" beforeDir="false" afterPath="$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1300,6 +1297,36 @@
           <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
           <line>32</line>
           <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="255" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/경주로 건설.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="257" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
