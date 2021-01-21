@@ -1,34 +1,36 @@
-from itertools import combinations, permutations
-import math
-def solution(numbers):
-    answer = 0
+from itertools import combinations
 
-    k_list = [i for i in range(10**(len(numbers)))]
-    k_list[1] = 0
+def solution(nums):
+    answer = -1
+    print(nums)
 
+    nums_list = [1] * 50000
+    nums_list[0] = 0
+    nums_list[1] = 0
 
-    for i in range(2, len(k_list)):
-        sqrt = int(math.sqrt(i))
-        if k_list[i] !=0:
-            u = i
-            while u+i < len(k_list):
-                u = u + i
-                k_list[u] = 0
+    for i in range(2,len(nums_list)):
 
-    numbers = list(numbers)
-    r = []
-    for i in range(1,len(numbers)+1):
-        r = r + list(permutations(numbers, i))
-    final_result = []
-    for i in range(len(r)):
-        Q = int((''.join(r[i])))
+        if nums_list[i] == 1:
 
-        if Q != 0 and Q != 1 and Q not in final_result:
-            final_result.append(Q)
-            if Q in k_list:
-                answer +=1
+            for j in range(i * 2, len(nums_list), i):
+                nums_list[j] = 0
+
+    k = list(combinations(nums, 3))
+    print(k)
+    print(nums_list[0:50])
+    cnt = 0
+    for i in range(len(k)):
+
+        count = k[i][0] + k[i][1] + k[i][2]
+        print(count)
+        if nums_list[count] == 1:
+           cnt +=1
+        else:
+            pass
+    print(cnt)
 
     return answer
 
-numbers = "17"
-solution(numbers)
+
+nums = [1,2,3,4]
+solution(nums)
