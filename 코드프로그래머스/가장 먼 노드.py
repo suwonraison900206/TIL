@@ -1,29 +1,32 @@
+from collections import deque
+
 def solution(n, edge):
     answer = 0
-    edge.sort()
-    print(edge)
-    n_lst = [0] * n
+    dist = [float('inf')] * (n+1)
+    dist[0] = 0
+    dist[1] = 0
+    nodes = [[] * (n+1) for __ in range(n+1)]
+    for u,v in edge:
 
-    for i in range(len(edge)):
+        nodes[u].append([v,1])
+        nodes[v].append([u,1])
+    queue = deque([1])
+    while queue:
+        q = queue.popleft()
 
-        if n_lst[edge[i][0] -1] == 0:
-            if n_lst[edge[i][1] -1] == 0:
-                n_lst[edge[i][1]-1] = 1
-            else:
-                n_lst[edge[i][0] -1] = n_lst[edge[i][1]-1] + 1
-        else:
-            if n_lst[edge[i][0]-1] != 0 and n_lst[edge[i][1] -1] != 0:
-                pass
-            elif n_lst[edge[i][0]-1] != 0 and n_lst[edge[i][1] -1] == 0:
-                n_lst[edge[i][1]-1] = n_lst[edge[i][0] -1] + 1
-            elif n_lst[edge[i][0] - 1] == 0 and n_lst[edge[i][1] - 1] != 0:
-                n_lst[edge[i][0]-1] = n_lst[edge[i][1]-1] + 1
-        print(edge[i])
-        print(n_lst)
-    print(n_lst.count(max(n_lst)))
+        for destination, d in nodes[q]:
 
-    return n_lst.count(max(n_lst))
+            if dist[q] + d < dist[destination]:
+                dist[destination] = dist[q] + d
+                queue.append(destination)
 
+    max_value = max(dist)
+
+    for i in dist:
+        if i == max_value:
+            answer += 1
+
+    return answer
 
 
 n = 6
