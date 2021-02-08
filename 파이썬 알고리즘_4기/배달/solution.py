@@ -10,7 +10,6 @@ def solution(N, road, K):
         road_lst[u].append([v, d])
         road_lst[v].append([u, d])
 
-
     queue = deque([1])
     while queue:
         q = queue.popleft()
