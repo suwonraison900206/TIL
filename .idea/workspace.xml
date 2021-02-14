@@ -8,8 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5731bfce-6d1d-4bc2-88a5-97030409ad64" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/코드프로그래머스/섬 연결하기.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/코드프로그래머스/카카오/2021/광고 삽입.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/코드프로그래머스/카카오/2021/합승택시요금(우선순위).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/코드프로그래머스/배달.py" beforeDir="false" afterPath="$PROJECT_DIR$/코드프로그래머스/배달.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py" beforeDir="false" afterPath="$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/코드프로그래머스/카카오/2021/메뉴리뉴얼.py" beforeDir="false" afterPath="$PROJECT_DIR$/코드프로그래머스/카카오/2021/메뉴리뉴얼.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/코드프로그래머스/카카오/2021/합승택시요금.py" beforeDir="false" afterPath="$PROJECT_DIR$/코드프로그래머스/카카오/2021/합승택시요금.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,8 +214,8 @@
       <recent name="C:\Users\multicampus\Desktop\suwonraison900206\TIL\수업 코드 예제" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.셔틀버스">
-    <configuration name="가장 먼 노드" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.광고 삽입">
+    <configuration name="가장 먼 노드2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -222,7 +227,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/가장 먼 노드.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -231,7 +236,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="셔틀버스" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="광고 삽입" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -239,11 +244,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2018" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2018/셔틀버스.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021/광고 삽입.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -252,7 +257,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="프렌즈4블록" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="합승택시요금" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,11 +265,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2018" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2018/프렌즈4블록.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021/합승택시요금.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="메뉴리뉴얼" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021/메뉴리뉴얼.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -295,7 +321,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="H-index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="보석쇼핑" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -307,7 +333,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/H-index.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/보석쇼핑.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="땅따먹기" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/땅따먹기.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -489,6 +536,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="셔틀버스" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TIL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2018" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2018/셔틀버스.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="등굣길" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -636,7 +704,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="보석쇼핑" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="합승택시요금(우선순위)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TIL" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -644,32 +712,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/보석쇼핑.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="땅따먹기" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TIL" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/코드프로그래머스" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/땅따먹기.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/코드프로그래머스/카카오/2021/합승택시요금(우선순위).py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -703,17 +750,19 @@
     <list>
       <item itemvalue="Python.D4_1226" />
       <item itemvalue="Python.boat" />
-      <item itemvalue="Python.가장 먼 노드" />
-      <item itemvalue="Python.H-index" />
-      <item itemvalue="Python.프렌즈4블록" />
-      <item itemvalue="Python.셔틀버스" />
+      <item itemvalue="Python.합승택시요금" />
+      <item itemvalue="Python.메뉴리뉴얼" />
+      <item itemvalue="Python.가장 먼 노드2" />
+      <item itemvalue="Python.합승택시요금(우선순위)" />
+      <item itemvalue="Python.광고 삽입" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.셔틀버스" />
-        <item itemvalue="Python.프렌즈4블록" />
-        <item itemvalue="Python.H-index" />
-        <item itemvalue="Python.가장 먼 노드" />
+        <item itemvalue="Python.광고 삽입" />
+        <item itemvalue="Python.합승택시요금(우선순위)" />
+        <item itemvalue="Python.합승택시요금" />
+        <item itemvalue="Python.가장 먼 노드2" />
+        <item itemvalue="Python.메뉴리뉴얼" />
       </list>
     </recent_temporary>
   </component>
@@ -1160,61 +1209,6 @@
           <option name="timeStamp" value="180" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="203" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="204" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="206" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="208" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/코드프로그래머스/가장 먼 노드2.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/코드프로그래머스/단어변환.py</url>
           <line>11</line>
           <option name="timeStamp" value="213" />
@@ -1426,13 +1420,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/2021/합승택시요금.py</url>
-          <line>15</line>
+          <line>13</line>
           <option name="timeStamp" value="278" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/코드프로그래머스/카카오/2018/프렌즈4블록.py</url>
           <line>21</line>
           <option name="timeStamp" value="285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/코드프로그래머스/섬 연결하기.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="286" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

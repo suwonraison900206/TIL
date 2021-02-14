@@ -2,17 +2,15 @@ from collections import deque
 
 def solution(n, s, a, b, fares):
     answer = 0
-    print(n,s,a,b,fares)
-    dist = [[float('inf')] * (n+1) for __ in range (n+1)]
-    print(dist)
 
+    dist = [[float('inf')] * (n+1) for __ in range (n+1)]
     nodes = [[] * (n+1) for __ in range(n+1)]
-    print(nodes)
+
+
     for u ,v ,d in fares:
         nodes[u].append([v, d])
         nodes[v].append([u, d])
-    print(nodes)
-    print(dist)
+
     for number in range(1, n+1):
         dist[number][number] = 0
         queue = deque([number])
@@ -23,18 +21,13 @@ def solution(n, s, a, b, fares):
                     dist[number][next] = dist[number][q] + d
                     queue.append(next)
 
-    stack = []
-    for i in range(1,len(dist[s])):
-        count = dist[s][i]
+        cnt = float('inf')
+        for i in range(1,len(dist[s])):
+            if dist[s][i] + dist[i][a] + dist[i][b] < cnt:
+                cnt = dist[s][i] + dist[i][a] + dist[i][b]
 
-        for j in range(1, len(dist[i])):
-            count = count + dist[i][a] + dist[i][b]
-            stack.append(count)
-    print(stack)
-    print(min(stack))
-    answer = min(stack)
-
-    return answer
+    print(cnt)
+    return cnt
 
 n = 6
 s = 4

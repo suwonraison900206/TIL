@@ -1,55 +1,39 @@
 from itertools import permutations, combinations
 def solution(orders, course):
     answer = []
-    for i in range(len(course)):
+    for i in course:
         dict = {}
-        for j in range(len(orders)):
+        result = []
+        for j in orders:
 
-            k = list(combinations(orders[j], course[i]))
+            for k in combinations(j, i):
 
-            for q in range(len(k)):
-                print(k[q])
+                stack = ''.join(sorted(k))
+                result.append(stack)
 
-                if k[q] not in dict:
-                    dict[k[q]] = 1
-                else:
-                    dict[k[q]] += 1
-        print(dict)
+        for i in result:
+            if i not in dict:
+                dict[i] = 1
+            else:
+                dict[i] += 1
+
+
         if dict:
-            if max(dict.values()) == 1:
+            qwe = max(dict.values())
+
+            if qwe == 1:
                 pass
             else:
 
-                u =[k for k,v in dict.items() if max(dict.values()) == v]
-        print(u, 'u')
-        print(dict)
+                for key, value in dict.items():
+                    if value == qwe:
+                        answer.append(key)
 
-        answer.append(u)
 
-    answer2 = []
+    answer.sort()
     print(answer)
-    for i in range(len(answer)):
-        for j in range(len(answer[i])):
-            word =''
-            for q in range(len(answer[i][j])):
-                word = word + answer[i][j][q]
 
-            if word not in answer2:
-                answer2.append(word)
-
-    answer3 = sorted(answer2)
-
-
-    print(answer3)
-
-    answer3.sort()
-    print(answer3)
-
-
-
-
-    return answer3
-
+    return answer
 orders = ["XYZ", "XWY", "WXA"]
 course = [2,3,4]
 solution(orders,course)
