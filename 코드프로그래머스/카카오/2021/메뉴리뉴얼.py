@@ -1,3 +1,4 @@
+from collections import Counter
 from itertools import permutations, combinations
 def solution(orders, course):
     answer = []
@@ -10,24 +11,18 @@ def solution(orders, course):
 
                 stack = ''.join(sorted(k))
                 result.append(stack)
+            print(result)
 
-        for i in result:
-            if i not in dict:
-                dict[i] = 1
-            else:
-                dict[i] += 1
+        dict = Counter(result)
+        # for i in result:
+        #     if i not in dict:
+        #         dict[i] = 1
+        #     else:
+        #         dict[i] += 1
+        print(dict)
 
-
-        if dict:
-            qwe = max(dict.values())
-
-            if qwe == 1:
-                pass
-            else:
-
-                for key, value in dict.items():
-                    if value == qwe:
-                        answer.append(key)
+        k = dict.most_common(2)
+        print(k, 'kkkk')
 
 
     answer.sort()
