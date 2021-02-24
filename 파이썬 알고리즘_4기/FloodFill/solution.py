@@ -23,7 +23,7 @@ def solution(n, m, image):
                             stack.append((di,dj))
                             visit[di][dj] = 1
 
-                cnt +=1
+                cnt += 1
 
     return cnt
 
