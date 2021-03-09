@@ -1,51 +1,27 @@
 def solution(n, computers):
+    def DFS(target, computers, check_list, answer, n):
+        for i in range(n):
 
-    print(n, computers)
+            if computers[target][i] == 1 and check_list[i] == 0:
+                check_list[i] = answer
+                DFS(i, computers, check_list, answer, n)
 
-    visit_list = [0] * n
 
-    print(visit_list, 'visit_lst')
-    stack = []
-    stack2 = []
-    cnt = 0
-    while visit_list.count(0) != 0:
 
-        if not stack:
-            cnt += 1
-            for i in range(len(computers)):
 
-                if visit_list[i] == 0:
-                    for j in range(len(computers[i])):
-                        if i == j:
-                            continue
-                        else:
-                            if visit_list[j] == 0 and computers[i][j] == 1:
-                                stack2.append(j)
-                                visit_list[j] = 1
-                print(stack2)
-                stack = stack2[:]
-                stack2 = []
-                break
+    answer = 1
+    check_list = [0] * n
+    for i in range(n):
+        for j in range(n):
+            if computers[i][j] == 1 and check_list[j] == 0:
+                check_list[j] = answer
+                DFS(j, computers, check_list, answer, n)
+                answer +=1
 
-        else:
-            for i in range(len(stack)):
-                for j in range(len(computers[stack[i]])):
-
-                    if i == j:
-                        continue
-                    else:
-                        if visit_list[j] == 0 and computers[i][j] == 1:
-                            stack2.append(j)
-                            visit_list[j] = 1
-            stack = stack2[:]
-            stack2 = []
-
-    print(cnt)
-
-    answer = 0
-
+    
     return answer
 
+
 n = 3
-computers = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
+computers =	[[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 solution(n, computers)

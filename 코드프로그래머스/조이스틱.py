@@ -1,42 +1,37 @@
 def solution(name):
     answer = 0
-
-    DICT_list ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-    count_list = []
-
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    number = [i for i in range(len(alphabet))]
+    dict = {i: min(j, abs(j - len(alphabet))) for i, j in zip(alphabet, number)}
+    print(dict)
     name_list = []
-    for i in range(len(name)-1):
+    for i in range(len(name)):
         name_list.append(name[i:len(name)] + name[0:i])
-    print(name_list)
+    q = set(name_list)
+    result_lst = []
+
     for i in range(len(name_list)):
-        answer = 0
-        sample = ['A'] * len(name)
-        for q in range(len(name_list[i])):
-            if q == 0:
-                count = 0
+        init_name = 'A' * len(name)
+        cnt = 0
+        word = ''
+        for j in range(len(name_list[i])):
+            print(name_list[i][j])
+            if init_name[j] != name_list[i][j]:
+                cnt = cnt + dict[name_list[i][j]]
+                word += name_list[i][j]
+                if word + ('A' * (len(name_list[i]) - len(word))) in q:
+                    result_lst.append(cnt)
+
             else:
-                answer = answer + 1
-                count = 0
-            for j in range(len(DICT_list)):
-                if DICT_list[j] == name_list[i][q]:
-                    sample[q] = DICT_list[j]
-                    break
-                count = count + 1
+                word += name_list[i][j]
+                if word + ('A' * (len(name_list[i]) - len(word))) in q:
+                    result_lst.append(cnt)
 
-            if count > len(DICT_list) - count:
-                answer = answer +  (len(DICT_list) - count)
-            else:
-                answer = answer + count
-            if "".join(sample) == name_list[i]:
-                break
-        count_list.append(answer)
-    print(count_list)
-    print(min(count_list))
-
-    return min(count_list)
+            cnt = cnt + 1
+    print(result_lst)
+    return min(result_lst)
 
 
-name ='ABAAAAABAB'
+name = "AZAAAZ"
 
 solution(name)

@@ -11,6 +11,7 @@ def solution(n, costs):
     for u,v,d in costs:
         nodes[u].append([v,d])
         nodes[v].append([u,d])
+    print(nodes)
 
 
     for number in range(n):
@@ -23,14 +24,11 @@ def solution(n, costs):
                 if island[number][q] + d < island[number][next]:
                     island[number][next] = island[number][q] + d
                     queue.append(next)
-
-    count = 0
     print(island)
+    count = 0
 
     for number in range(n):
         island[number][number] = float('inf')
-
-    print(island)
 
     for i in range(1, len(island)):
 

@@ -14,7 +14,7 @@ def solution(nums):
 
             for j in range(i * 2, len(nums_list), i):
                 nums_list[j] = 0
-
+    print(nums_list)
     k = list(combinations(nums, 3))
     print(k)
     print(nums_list[0:50])
