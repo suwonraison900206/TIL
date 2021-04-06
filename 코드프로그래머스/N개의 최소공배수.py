@@ -1,22 +1,15 @@
+from math import gcd
+
 def solution(arr):
-    answer = 0
-    arr.sort(reverse=True)
-    stack = []
-    for i in range(len(arr) - 1, 0, -1):
-        for j in range(i - 1, -1, -1):
 
-            if arr[j] % arr[i] == 0:
-                arr[j] = arr[j] // arr[i]
-            else:
-                pass
-        stack.append(arr[i])
-    stack.append(arr[0])
+    for i in range(1, len(arr)):
 
-    cnt = 1
-    for i in range(len(stack)):
-        cnt = cnt * stack[i]
-    print(cnt)
-    return cnt
+        arr[i] = arr[i-1] * arr[i] //gcd(arr[i-1], arr[i])
 
-arr = [360, 17]
+
+    return arr[-1]
+
+
+
+arr = [3,4,9,16]
 solution(arr)

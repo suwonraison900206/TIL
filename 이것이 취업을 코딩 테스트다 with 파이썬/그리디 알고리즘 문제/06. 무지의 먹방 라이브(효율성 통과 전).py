@@ -1,30 +1,23 @@
 def solution(food_times, k):
     answer = 0
+    number = [i for i in range(len(food_times))]
+    food_dict = {num: food_time for num, food_time in zip(number, food_times)}
+    number.sort(key= lambda x:[x[0],x[1]])
+    while food_dict:
+        print(food_dict, k)
+        min_value = min(food_dict.values())
+        if k - (min_value * len(food_dict)) >= 0:
+            k = k - (min_value * len(food_dict))
+            food_dict = {key: (value - min_value) for key, value in food_dict.items() if value != min_value}
 
-    if sum(food_times) <= k:
-        answer = -1
-        return answer
+        else:
+            count = k // len(food_dict)
+            return k - (count*len(food_dict))
 
-
-    min_value = min(food_times)
-
-    if (min_value * len(food_times)) < k:
-        for i in range(len(food_times)):
-            food_times[i] = food_times[i] - min_value
-            k = k - min_value
-
-    while k != -1:
-        for i in range(len(food_times)):
-            if food_times[i] != 0:
-                food_times[i] = food_times[i] - 1
-                k = k - 1
-            if k == -1:
-                answer = i + 1
-                return answer
+    return -1
 
 
-food_times = [460, 560, 40, 600]
-k = 1340olA
+food_times = [460, 560, 150, 600]
+k = 1340
 
-
-print(solution(food_times, k))
+solution(food_times, k)
