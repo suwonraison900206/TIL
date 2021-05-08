@@ -13,59 +13,82 @@ ladders = [[0] * N for __ in range(M)]
 
 for node in nodes:
     ladders[node[0]][node[1]] = 1
-    ladders[node[0]][node[1]+1] = 1
+    ladders[node[0]][node[1]+1] = 2
 
-for i in range(len(nodes)):
-    x,y = nodes[i]
-    nodes.append([x, y+1])
-nodes.sort()
+print(nodes)
 possible_lst = []
-for i in range(len(ladders)):
-    for j in range(0,len(ladders[i])-1):
 
-        if [i,j] not in nodes and [i, j+1] not in nodes:
-            possible_lst.append([i,j])
+for i in range(0, H):
+    for j in range(0, M):
+        if j == 0:
+            if [i,j] not in nodes and [i,j+1] not in nodes:
+                possible_lst.append([i,j])
+        else:
+            if [i,j] not in nodes and [i,j-1] not in nodes and [i,j+1] not in nodes:
+                possible_lst.append([i,j])
 
-print(possible_lst, 'possible')
-# print(nodes, 'nodes')
-# print(ladders, 'ladders')
-for q in range(0,4):
-    for w in permutations(possible_lst,q):
+print(possible_lst, '123123')
+
+for w in range(4):
+    for r in permutations(possible_lst,w):
         ladder = copy.deepcopy(ladders)
-        for r in range(len(w)):
-            ladder[w[r][0]][w[r][1]] = 1
-            ladder[w[r][0]][w[r][1]+1] = 1
-        flag = 0
+        copy_nodes = copy.deepcopy(nodes)
+        qq = 0
 
-        for i in range(N):
-
-            start = [[0, i]]
-            x, y = start.pop()
-            while True:
-                if [x,y] in nodes:
-                    if y+1 < N and ladder[x][y+1] == 1:
-                        y = y+1
-                    elif y -1 >= 0 and ladder[x][y-1] == 1:
-                        y = y - 1
-
-                    if x < M -1:
-                        x = x + 1
-                    else:
-                        print(i, y)
-                        if y != i:
-                            flag = 1
-                            break
-                        else:
-                            break
+        print(r)
+        if len(r) !=0:
+            for t in r:
+                if [t[0], t[1]] not in copy_nodes and [t[0], t[1] -1] not in copy_nodes and [t[0], t[1] +1] not in copy_nodes:
+                    copy_nodes.append([t[0], t[1]])
+                    ladder[t[0]][t[1]] = 1
+                    ladder[t[0]][t[1]+1] = 2
                 else:
-                    if x < M-1:
-                        x = x+1
-                    else:
-                        print(i, y)
-                        if y != i:
-                            flag = 1
-                            break
+                    qq = 1
+        if qq == 1:
+            continue
+
+        flag = 0
+        print(r)
+        for i in range(N):
+            x = 0
+            y = i
+            while True:
+
+                if ladder[x][y] == 0:
+                    x += 1
+                elif ladder[x][y] == 1:
+                    x += 1
+                    y += 1
+                elif ladder[x][y] == 2:
+                    x += 1
+                    y -= 1
+
+                if x == N-1:
+                    if ladder[x][y] == 0:
+                        if y == i:
+                            print('True', y,i)
                         else:
-                            break
+                            flag = 1
+                        break
+                    elif ladder[x][y] == 1:
+                        y += 1
+                        if y == i:
+                            print('True', y, i)
+                            pass
+                        else:
+                            flag = 1
+                        break
+
+                    elif ladder[x][y] == 2:
+                        y -=1
+                        if y == i:
+                            print('True', y, i)
+                            pass
+                        else:
+                            flag = 1
+                        break
+
+
+
         if flag == 0:
-            print(123)
+            print(w)
