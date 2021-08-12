@@ -1,48 +1,37 @@
+# import sys
+# sys.stdin = open('1209.txt')
 
-temp = []
-final_result = []
-for i in range(10):
-    result = []
-    c = int(input())
-    test_in = []
-    for i in range(100):
-       + temp = list(map(int, input().split()))
-        test_in.append(temp)
-    reverse_test_in = test_in[::-1]
+
+for test_case in range(1, 11):
+    T = int(input())
+    result = 0
+    lst = [list(map(int,input().split())) for __ in range(100)]
+
+    for i in lst:
+        max_number = sum(i)
+
+        if max_number > result:
+            result = max_number
+
+    for i in zip(*lst):
+        max_number = sum(i)
+
+        if max_number > result:
+            result = max_number
+
     cnt = 0
+    for i in range(len(lst)):
+        cnt += lst[i][i]
 
-    for i in range(len(test_in)):
-        sum = 0
-        for j in range(len(test_in[0])):
-            sum = sum + test_in[i][j]
-        result.append(sum)
+    if result < cnt:
+        result = cnt
 
-    for j in range(len(test_in[0])):
-        sum = 0
-        for i in range(len(test_in)):
-            sum = sum + test_in[i][j]
-        result.append(sum)
-
-    sum = 0
-    for i in range(len(test_in)):
-
-        sum = sum + test_in[i][cnt]
-        cnt = cnt + 1
-    result.append((sum))
-
-    sum = 0
     cnt = 0
-    for i in range(len(reverse_test_in)):
-        sum = sum + reverse_test_in[i][cnt]
-        cnt = cnt + 1
-    result.append((sum))
+    for i in range(len(lst)):
 
-    final_result.append(max(result))
+        cnt += lst[i][-i]
 
-    # result_max = max(result)
-    # final_result.append(result_max)
-    #
+    if result < cnt:
+        result = cnt
 
-
-for i in range(10):
-    print('#{0} {1}'.format(i+1 , final_result[i]))
+    print('#{} {}'.format(test_case,result))

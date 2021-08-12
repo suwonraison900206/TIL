@@ -3,7 +3,7 @@ from itertools import permutations
 import copy
 sys.stdin = open('사다리 조작.txt')
 
-N, M, H = map(int,input().split())
+
 nodes = [list(map(int,input().split())) for __ in range(M)]
 for i in range(len(nodes)):
     for j in range(len(nodes[i])):
