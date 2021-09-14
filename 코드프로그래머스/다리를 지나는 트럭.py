@@ -1,43 +1,55 @@
+from collections import deque
+
+
 def solution(bridge_length, weight, truck_weights):
-    bridge_list = [0] * bridge_length
+    answer = 0
+    queue = deque(truck_weights)
+    bridge_lst = [0] * bridge_length
+    flag = 0
+    while queue:
+        flag_cnt = 0
+        print(flag, queue, bridge_lst)
+        if bridge_lst[-1] != 0:
+            weight += bridge_lst[-1]
+            bridge_lst[-1] = 0
+            flag -= 1
+            for i in range(len(bridge_lst) - 2, -1, -1):
+                bridge_lst[i], bridge_lst[i + 1] = bridge_lst[i + 1], bridge_lst[i]
+                flag_cnt +=1
+                if flag -1 == flag_cnt:
+                    break
 
-    print( bridge_length , weight, truck_weights)
+            if weight >= queue[0]:
+                target = queue.popleft()
+                weight = weight - target
+                bridge_lst[0] = target
+                flag +=1
 
-    print(sum(bridge_list))
-    count = 0
-    while True:
-        if count == 0:
-            bridge_list[0] = truck_weights.pop(0)
-            count += 1
-            weight = weight - bridge_list[0]
+            answer += 1
         else:
 
+            for i in range(len(bridge_lst)-2, -1, -1):
 
-            for i in range(len(bridge_list)-1,-1,-1):
-                if i == len(bridge_list)-1:
-                    weight = weight + bridge_list[i]
-                    bridge_list[i] = 0
-                else:
-                    bridge_list[i+1] = bridge_list[i]
-                    bridge_list[i] = 0
-            if truck_weights:
-
-                if weight - truck_weights[0] >=0:
-                    bridge_list[0] = truck_weights.pop(0)
-                    weight = weight - bridge_list[0]
-
-            count = count + 1
+                bridge_lst[i], bridge_lst[i + 1] = bridge_lst[i + 1], bridge_lst[i]
 
 
+            if weight >= queue[0]:
+                target = queue.popleft()
+                weight = weight - target
+                bridge_lst[0] = target
+                flag += 1
 
-        if sum(bridge_list) == 0:
-            if len(truck_weights) == 0:
-                print(count)
-                return count
+            answer += 1
 
+    for j in range(len(bridge_lst)):
+        if bridge_lst[j] != 0:
+            print(len(bridge_lst) - j)
+            return answer + len(bridge_lst) - j
+    print(answer)
 
-bridge_length = 100
-weight = 100
-truck_weights = [10]
+    return answer
+bridge_length = 5
+weight = 5
+truck_weights = [2,2,2,2,1,1,1,1]
 
 solution(bridge_length, weight, truck_weights)

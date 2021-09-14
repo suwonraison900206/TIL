@@ -1,38 +1,45 @@
 def solution(gems):
-    dict ={}
+    answer = []
+    gems_dict = {}
+    for gem in gems:
 
-    for i in range(len(gems)):
+        if gem not in gems_dict:
+            gems_dict[gem] = 0
 
-        if gems[i] not in dict:
-            dict[gems[i]] = 1
+    L = len(gems_dict)
 
-    missing = len(dict)
+    start, end = 0, 0
 
-    stack2 = []
-    left = start = end = 0
-    for i in range(len(gems)):
+    while end < len(gems):
 
-        missing -= dict[gems[i]] > 0
-        dict[gems[i]] -= 1
+        if gems_dict[gems[end]] == 0:
+            gems_dict[gems[end]] = -1
+            L -= 1
+        else:
+            gems_dict[gems[end]] -= 1
+        print(gems_dict, end, L)
+        if L == 0:
 
-        if missing == 0:
-            while left < i and dict[gems[left]] < 0:
-                dict[gems[left]] += 1
-                left +=1
+            while L == 0:
 
-            if not end or i - left <= end - start:
-                stack2.append([i-left, left, i])
-                start, end = left, i
+                if gems[start] in gems_dict:
 
-                dict[gems[left]] +=1
-                missing += 1
-                left += 1
+                    if gems_dict[gems[start]] == -1:
+                        gems_dict[gems[start]] = 0
+                        L += 1
+                        answer.append([start + 1, end + 1, end - start + 1])
+                    else:
+                        gems_dict[gems[start]] += 1
+                start += 1
 
-    stack2.sort(key=lambda x:(x[0], x[1]))
-    a = stack2[0]
-    answer = [a[1] +1, a[2]]
+        end += 1
+
+
+    answer.sort(key=lambda x: (x[2], x[0]))
+
     print(answer)
-    return answer
 
-gems = ["ZZZ", "YYY", "NNNN", "YYY", "BBB"]
+    return [answer[0][0], answer[0][1]]
+
+gems = ["A","B","B","B","B","B","B","C","B","A"]
 solution(gems)

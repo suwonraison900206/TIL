@@ -3,33 +3,31 @@ import heapq
 
 def solution(jobs):
     answer = 0
-    jobs.sort(reverse=True)
-    L = len(jobs)
-    start = 0
-    cnt = 0
+    jobs.sort(key = lambda x:(x[1], x[1] - x[0]))
     heap = []
+    print(jobs)
 
-    while jobs :
+    start = 0
+    end = 0
+    cnt = 0
+    w = len(jobs)
+    while jobs:
+        q = jobs.pop(0)
+        print(q)
+        print(start, end,cnt, '123213')
+        if start == 0:
+            end = q[0] + start + q[1]
+            cnt = q[0] + start + q[1]
+            start = end
+        else:
+            cnt = cnt + (end - q[0]) + q[1]
+            end += q[1]
+    print(cnt)
+    print(cnt//w)
 
-        while jobs and jobs[-1][0] <= start:
-            heapq.heappush(heap , [jobs[-1][1] +(start - jobs[-1][0]), jobs[-1]])
-            jobs.pop()
-        print(heap)
-
-        while heap:
-            print(heap ,'before')
-            q = heapq.heappop(heap)
-            print(q)
-            start += q[1][1]
-            cnt = cnt + q[0]
-
-            for i in heap:
-                i[0] = i[0] + q[1][1]
-
-        start += 1
-    return int(cnt // L)
+    return cnt // w
 
 
+jobs =[[24, 10], [28, 39], [43, 20], [37, 5], [47, 22], [20, 47], [15, 34], [15, 2], [35, 43], [26, 1]]
 
-jobs = [[0, 3], [1, 9], [2, 6]]
 solution(jobs)

@@ -1,8 +1,5 @@
 def solution(n, k, cmd):
     answer = ''
-
-    print(n, k , cmd)
-
     dict1 = {}
     dict2 = {}
 
@@ -10,13 +7,12 @@ def solution(n, k, cmd):
         dict1[i] = [1]
         dict2[i] = ['O']
 
-
     target = k
     end = n-1
     save = []
     for i in cmd:
         check = i.split()
-        print(check, target)
+
         if check[0] == 'D':
             target += int(check[1])
 
@@ -32,7 +28,8 @@ def solution(n, k, cmd):
         elif check[0] == 'Z':
 
             dict2[save[-1]] = ['O']
-            save.pop()
+            w = save.pop()
+            dict1[w] = 1
 
 
     for key, value in dict2.items():

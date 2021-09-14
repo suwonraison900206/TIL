@@ -1,37 +1,34 @@
+from collections import deque
+
+
 def solution(priorities, location):
     answer = 0
-    count = 0
-
-    priorities_locate = [0] * len(priorities)
-
-    for i in range(len(priorities_locate)):
-        priorities_locate[i] = count
-        count +=1
+    locate_stack = deque([i for i in range(len(priorities))])
+    stack = deque(priorities)
     cnt = 0
+
     while True:
-        k = priorities.pop(0)
-        k_locate = priorities_locate.pop(0)
+        priority = stack.popleft()
+        locate = locate_stack.popleft()
 
-        if priorities:
+        if not stack:  # 2, 5, 8 런타임 에러 : 스택이 비어있을때 max 값 뽑을수 없어서
+            return cnt + 1
 
-            if k >= max(priorities):
-                if k_locate == location:
-                    cnt += 1
-                    return cnt
-                cnt += 1
-            else:
-                priorities.append(k)
-                priorities_locate.append(k_locate)
+
+        if max(stack) > priority:
+
+            stack.append(priority)
+            locate_stack.append(locate)
+
         else:
-            cnt +=1
-            return cnt
+            cnt += 1
+            if locate == location:
+                print(cnt)
+                return cnt
 
 
 
-
-    return answer
-
-priorities = [2, 1, 3, 2]
-location = 2
+priorities = [1]
+location = 0
 
 solution(priorities, location)
