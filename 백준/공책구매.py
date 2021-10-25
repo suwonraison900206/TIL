@@ -13,6 +13,3 @@ for test_case in range(1, t+1):
     print(lst)
 
 
-    31
-    52
-    15

@@ -1,137 +1,57 @@
+import copy
 import sys
-sys.stdin = open("마법사상어와파이어볼.txt")
-
+sys.stdin = open('마법사상어와파이어볼.txt')
 
 N, M, K = map(int,input().split())
+fireball = [list(map(int,input().split())) for _ in range(M)]
+print(fireball)
 
-fireball_lst = [list(map(int,input().split())) for __ in range(M)]
-fireball_lst2 = []
-# r, c  = 파이어볼 위치, m = 질량 ,s= 속력 ,d = 방향
+ # i 번 파이어볼의 위치는 (r,c) 질량은 m 방향은 d 속력은 s
+dir = [[-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1]]
+lst2 = [[0] * N for _ in range(N)]
+cnt = 0
+while cnt != K:
 
-direction_lst = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
+    for r, c, m ,s ,d in fireball:
+            if s > N:
+                s = s % N
+            elif s == N:
+                s = 0
 
-for i in range(K):
+            dx = r-1 + (dir[d][0] * s)
+            dy = c-1 + (dir[d][1] * s)
+            if dx > N:
+                dx = dx % N
 
+            if dy > N:
+                dy = dy % N
 
-    for j in range(len(fireball_lst)):
+            if lst2[dx][dy] == 0:
 
-        r, c, m, s, d = fireball_lst[j][0], fireball_lst[j][1], fireball_lst[j][2], fireball_lst[j][3], fireball_lst[j][4]
+                lst2[dx][dy] = [m, d, 1]
+            else:
+                lst2[dx][dy][0] += m
+                lst2[dx][dy][1] += d
+                lst2[dx][dy][2] +=1
+    print(lst2)
+    new_fireball = []
+    for i in range(N):
+        for j in range(N):
+            if type(lst2[i][j]) != int:
 
-        r = r + (direction_lst[d][0] * s)
-        c = c + (direction_lst[d][1] * s)
+                if lst2[i][j][0] // 5 != 0:
+                    new_m = lst2[i][j][0] // 5
+                    new_s = lst2[i][j][1] // lst2[i][j][2]
+                    if lst2[i][j][1] % 2 == 0: # 짝수:
+                        for w in (0, 2, 4, 6):
+                            new_fireball.append([i+1, j+1, new_m, new_s, w])
+                    elif lst2[i][j][1] % 2 == 1: # 홀수
 
+                        for w in (1, 3, 5, 7):
+                            new_fireball.append([i + 1, j + 1, new_m, new_s, w])
+                lst2[i][j] = 0
 
-        if r > N:
-            r = r % N
-        elif r <= 0:
-            while r <= 0:
-                r = r + N
-
-        if c > N:
-            c = c % N
-        elif c <= 0:
-            while c <= 0:
-                c = c + N
-
-        fireball_lst[j] = [r,c,m,s,d]
-
-    stack = []
-    stack2 = []
-
-    while fireball_lst:
-
-        k = fireball_lst.pop()
-        flag = 0
-        if fireball_lst:
-            for j in range(len(fireball_lst)):
-
-                if k[0] == fireball_lst[j][0] and k[1] == fireball_lst[j][1]:
-                    flag = 1
-                    fireball_lst[j][2] += k[2]
-                    fireball_lst[j][3] += k[3]
-
-                    if (k[4] % 2 == 1 and fireball_lst[j][4] % 2 == 1):
-
-                        fireball_lst[j].append('odd')
-
-                    elif (k[4] % 2 == 0 and fireball_lst[j][4] % 2 == 0):
-
-                        fireball_lst[j].append('even')
-                    else:
-                        fireball_lst[j].append('else')
-
-            if flag == 0:
-                fireball_lst2.append(k)
-                cnt = 1
-        else:
-            fireball_lst2.append(k)
-            cnt = 1
-
-    fireball_lst = fireball_lst2[:]
-    fireball_lst2 = []
-
-    while fireball_lst:
-        q = fireball_lst.pop()
-        if len(q) != 5:
-            odd_flag = 0
-            even_flag = 0
-            else_flag = 0
-            for j in range(5, len(q)):
-                if q[j] == 'odd':
-                    odd_flag +=1
-                elif q[j] == 'even':
-                    even_flag +=1
-                else:
-                    else_flag +=1
-
-            if else_flag != 0:
-                if int(q[2]/5) >= 1:
-                    fireball_lst2.append([q[0], q[1], int(q[2]/ 5), int(q[3] / (len(q) -4)), 1])
-                    fireball_lst2.append([q[0], q[1], int(q[2] / 5), int(q[3] /(len(q) -4)), 3])
-                    fireball_lst2.append([q[0], q[1], int(q[2] / 5), int(q[3] /(len(q) -4)), 5])
-                    fireball_lst2.append([q[0], q[1], int(q[2] / 5), int(q[3] /(len(q) -4)), 7])
-            elif (even_flag == 0 and odd_flag != 0) or (even_flag != 0 and odd_flag ==0):
-                if int(q[2]/5) >= 1:
-                    fireball_lst2.append([q[0], q[1], int(q[2]/ 5), int(q[3] /(len(q) -4)), 0])
-                    fireball_lst2.append([q[0], q[1], int(q[2] / 5), int(q[3] /(len(q) -4)), 2])
-                    fireball_lst2.append([q[0], q[1], int(q[2] / 5), int(q[3] /(len(q) -4)), 4])
-                    fireball_lst2.append([q[0], q[1], int(q[2] / 5), int(q[3] /(len(q) -4)), 6])
-        else:
-            fireball_lst2.append(q)
-
-
-    fireball_lst = fireball_lst2[:]
-    fireball_lst2 = []
-
-
-
-count = 0
-if fireball_lst:
-    for j in range(len(fireball_lst)):
-        count = count + fireball_lst[j][2]
-else:
-    count = 0
-
-print(count)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    fireball = new_fireball[:]
+    cnt +=1
+    # print(lst2)
+    # print(fireball)
