@@ -1,24 +1,29 @@
 from collections import Counter
 
+
 N = int(input())
-target = [int(input()) for __ in range(N)]
-target.sort()
-average = 0
-mid = target[len(target)//2]
-number_min = Counter(target)
-rnge = target[-1] - target[0]
+lst = [int(input()) for _ in range(N)]
+lst.sort()
 
+number_dict = {}
+for n in lst:
+    if n not in number_dict:
+        number_dict[n] = 1
+    else:
+        number_dict[n] += 1
+lst2 = []
+for key,value in number_dict.items():
+    lst2.append([key, value])
+lst2.sort(key=lambda x:(-x[1], x[0]))
+print(round(sum(lst) / N))
+print(lst[N // 2])
 
-for i in target:
-
-    average += i
-
-average = round(average / len(target))
-number_min = number_min.most_common(2)
-print(average)
-print(mid)
-if len(number_min) == 1:
-    print(number_min[0][0])
+if len(lst2) != 1:
+    if lst2[0][1] == lst2[1][1]:
+        print(lst2[1][0])
+    else:
+        print(lst2[0][0])
 else:
-    print(number_min[0][0] if number_min[0][1] != number_min[1][1] else number_min[1][0])
-print(rnge)
+    print(lst2[0][0])
+
+print(lst[-1] - lst[0])
