@@ -5,7 +5,7 @@ def solution(key, lock):
         for i in range(len(key)):
             a = []
 
-            for j in range(len(key)-1,-1,-1):
+            for j in range(len(key)-1, -1, -1):
                 a.append(key[j][i])
             key_lst.append(a)
         return key_lst

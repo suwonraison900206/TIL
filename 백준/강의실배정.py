@@ -1,34 +1,17 @@
+import heapq
+
 n = int(input())
 lst = [list(map(int,input().split())) for _ in range(n)]
-cnt = 0
-check = 0
-result = []
-dir = 0
+lst.sort(key= lambda x: x[0])
+heap = []
+heapq.heappush(heap, lst[0][1])
 
-for x, y in lst:
-
-    if check == 0:
-        result.append([y])
-        check = y
+for i in range(1, n):
+    print(heap)
+    if heap[0] > lst[i][0]:
+        heapq.heappush(heap, lst[i][1])
     else:
+        heapq.heappop(heap) #최소값
+        heapq.heappush(heap, lst[i][1])
 
-        if x < result[dir][-1]:
-
-            for i in range(len(result)):
-                if x < result[i][-1]:
-                    continue
-                else:
-                    result[i].append(y)
-                    check = y
-                    break
-
-            else:
-                result.append([y])
-                check = y
-                dir += 1
-
-        else:
-            result[dir].append(y)
-
-print(result)
-print(len(result))
+print(len(heap))

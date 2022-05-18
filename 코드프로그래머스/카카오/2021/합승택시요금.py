@@ -3,8 +3,7 @@ from collections import deque
 def solution(n, s, a, b, fares):
     dist = [[float('inf')] * (n+1) for __ in range (n+1)]
     nodes = [[] * (n+1) for __ in range(n+1)]
-    print(dist)
-    for u ,v ,d in fares:
+    for u, v, d in fares:
         nodes[u].append([v, d])
         nodes[v].append([u, d])
 
@@ -22,9 +21,7 @@ def solution(n, s, a, b, fares):
     for i in range(1,len(dist[s])):
         if dist[s][i] + dist[i][a] + dist[i][b] < cnt:
             cnt = dist[s][i] + dist[i][a] + dist[i][b]
-    print(dist)
-    print(cnt)
-
+    print(cnt, dist)
     return cnt
 
 n = 6

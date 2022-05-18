@@ -22,7 +22,6 @@ def solution(enroll, referral, seller, amount):
                 break
             else:
                 a, b = round(money * 0.9) , round(money * 0.1)
-                print(a,b)
                 if b == 0:
                     family_money[sell] += money
                 else:
@@ -32,8 +31,6 @@ def solution(enroll, referral, seller, amount):
                 sell = family_money[sell]
                 money = rest_money
 
-
-    print(family_money)
     for key, value in family_money.items():
         answer.append(value)
 

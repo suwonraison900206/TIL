@@ -20,14 +20,6 @@ for i in range(N):
 for i in range(4):
     each_shark_dir_pr2.append(each_shark_dir_pr[4*i:(4*i)+4])
 
-
-
-
-print(shark_map)
-print(each_shark_dir)
-print(each_shark_dir_pr2)
-
-
 while shark != 1 or count < 1001 :
     number = 1
     while number < M+1:
